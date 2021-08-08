@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    //  Факториал
+
+    function factorial(n) {
+        if (n > 0) {
+            let x = n - 1;
+            while (x > 1) {
+                n *= x;
+                x--;
+            }
+            return n;
+        } else if (n < 0) console.log("enter n > 0");
+        else return 1;
+    }
+
+
+    function fact(f) {
+        if (f > 0) {
+            for (let i = f - 1; i > 0; i--) {
+                f *= i;
+            }
+            return f;
+        } else return (f < 0) ? console.log("enter n > 0") : 1;
+    }
+
+    //console.log(factorial(5), fact(0));
+
+
+
+    //   число и степень
+
+    function powerOfNumber(x, n) {
+        let i = x;
+        if (n > 0) {
+            while (n > 1) {
+                x *= i;
+                n--;
+            }
+            return x;
+        }
+        else if (n < 0) {
+            while (n != -1) {
+                x *= i;
+                n++;
+            }
+            return 1 / x;
+        } else return 1;
+    }
+
+
+    function power(x, n) {
+        let i;
+        if (n > 0) {
+            for (i = x; n != 1; n--)
+                x *= i;
+            return x;
+        } else if (n < 0) {
+            for (i = x; n != -1; n++)
+                x *= i;
+            return 1 / x;
+        } else return 1;
+    }
+
+    //console.log(powerOfNumber(-10, 2), power(10, -2));
+
+
+
+    // нахождения наименьшего общего кратного
+
+    function commonMultiple(x, y) {
+        if (x > y) {
+            let leastMultiple = x;
+            while (leastMultiple % y != 0) {
+                leastMultiple += x;
+            }
+            return leastMultiple;
+        } else {
+            leastMultiple = y;
+            while (leastMultiple % x != 0) {
+                leastMultiple += y;
+            }
+            return leastMultiple;
+        }
+    }
+
+    function multiple(x, y) {
+        let leastMultiple;
+        x > y ? leastMultiple = x : leastMultiple = y;
+        for (leastMultiple = x; leastMultiple % y != 0;)
+            leastMultiple += x;
+        return (leastMultiple);
+
+        for (leastMultiple = y; leastMultiple % x != 0;)
+            leastMultiple += y;
+        return leastMultiple;
+    }
+
+    //console.log(commonMultiple(-5, 4), multiple(9, 7))
+
+
+    //******
+
+    function number(n) {
+        let result = 0;
+        while (n != 0) {
+            let rest = n % 10;
+            n = parseInt(n / 10);
+            result = result * 10 + rest;
+        }
+        return result;
+    }
+
+    // console.log(number(54321));
+
+</script>
+
+<body>
+
+</body>
+
+</html>
